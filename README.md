@@ -29,3 +29,23 @@ N | Pattern name | Description
   * Performance
 
 In conclusion, we can say that whenever we create a singleton we need to make sure that it is an Immutable. Singleton design pattern is used in core java classes also, for example, java.lang.Runtime, java.awt.Desktop
+## Factory Method Pattern (Virtual Constructor)
+Define an interface for creating an object, but let subclasses decide which class to instantiate.
+Factory Method lets a class defer instantiation to subclasses.
+This pattern allows allows the consumer to create new objects without having to know the details of how they're created, 
+or what their dependencies are - they only have to give the information they actually want.
+
+##Builder Pattern
+The builder pattern is used when we have an complex object with too many fields.
+The intent of the Builder design pattern is to separate the construction of a complex object from its
+representation. This is mostly helpful when we need to create an immutable state of object. 
+
+Pros
+1) Code is more maintainable if number of fields required to create object is more than 4 or 5.
+2) Object Creation code less error-prone as user will know what they are passing because of explicit method call.
+3) Builder pattern increase robustness, as only fully constructed object will be available to client.
+4) You can force immutability to the object once its created.
+
+Cons
+1) Builder pattern is verbose and requires code duplication as Builder needs to copy all fields from Original or Item class.
+
