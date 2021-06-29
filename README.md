@@ -60,3 +60,9 @@ To implement this pattern we need to create an interface which has clone method 
 #Behavioral
 ##Strategy(Policy Pattern) in Java. 
 Strategy is a behavioral design pattern that turns a set of behaviors into objects and makes them interchangeable inside original context object. The original object, called context, holds a reference to a strategy object and delegates it executing the behavior.
+In other words we use Strategy pattern when we have multiple algorithms for single task and allow user code
+to decide which algorithm to use. As an example we can see sort method in Collections class. Method takes a Comparator as
+a parameter and based on its implementation collection items will be sorted in different way.
+**Basic** implementation requires that each Strategy implements an interface and provides a concrete implementation for an execute method. The strategy is selected and the execute method called via an interface reference.
+There is also **Enum Strategy** implementation where we can implement your business rule in each constant.
+The context class receives the strategy from the client and executes the algorithm in the selected strategy.
