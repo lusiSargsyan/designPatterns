@@ -35,7 +35,7 @@ Factory Method lets a class defer instantiation to subclasses.
 This pattern allows allows the consumer to create new objects without having to know the details of how they're created, 
 or what their dependencies are - they only have to give the information they actually want.
 
-##Builder Pattern
+## Builder Pattern
 The builder pattern is used when we have an complex object with too many fields.
 The intent of the Builder design pattern is to separate the construction of a complex object from its
 representation. This is mostly helpful when we need to create an immutable state of object. 
