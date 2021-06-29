@@ -14,7 +14,8 @@ N | Pattern name | Description
 
 # Creational patterns
   * Singltone
-  * Factory Method  
+  * Factory Method 
+  * Prototype 
   * Abstract Factory 
   * Builder 
   
@@ -35,7 +36,7 @@ Factory Method lets a class defer instantiation to subclasses.
 This pattern allows allows the consumer to create new objects without having to know the details of how they're created, 
 or what their dependencies are - they only have to give the information they actually want.
 
-##Builder Pattern
+## Builder Pattern
 The builder pattern is used when we have an complex object with too many fields.
 The intent of the Builder design pattern is to separate the construction of a complex object from its
 representation. This is mostly helpful when we need to create an immutable state of object. 
@@ -49,3 +50,13 @@ Pros
 Cons
 1) Builder pattern is verbose and requires code duplication as Builder needs to copy all fields from Original or Item class.
 
+## Prototype Pattern
+This pattern is used when the cost of creating a new object is expensive and resource intensive.
+Prototype pattern suggest to crate a copy of object instead of creating a new one.
+1) If the class has only primitive data type members then a completely new copy of the object will be created and the reference to the new object copy will be returned.
+2) If the class contains members of any class type then only the object references to those members are copied and hence the member references in both the original object as well as the cloned object refer to the same object. 
+To implement this pattern we need to create an interface which has clone method and implement it in our class.
+
+#Behavioral
+##Strategy(Policy Pattern) in Java. 
+Strategy is a behavioral design pattern that turns a set of behaviors into objects and makes them interchangeable inside original context object. The original object, called context, holds a reference to a strategy object and delegates it executing the behavior.
