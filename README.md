@@ -58,6 +58,22 @@ Prototype pattern suggest to crate a copy of object instead of creating a new on
 To implement this pattern we need to create an interface which has clone method and implement it in our class.
 
 #Behavioral
+This patterns provide solutions for better interactions between objects
+and how to provide lose coupling and flexibility to extend easily.
+There are eleven Behavioral design patterns:
+
+1) Strategy Pattern
+2) Chain of Responsibility
+3) Command Pattern
+4) Interpreter Pattern
+5) Iterator Pattern
+6) Mediator Pattern
+7) Memento Pattern
+8) Observer Pattern
+9) State Pattern
+10) Template Method Pattern
+11) Visitor Pattern
+
 ##Strategy(Policy Pattern) in Java. 
 Strategy is a behavioral design pattern that turns a set of behaviors into objects and makes them interchangeable inside original context object. The original object, called context, holds a reference to a strategy object and delegates it executing the behavior.
 In other words we use Strategy pattern when we have multiple algorithms for single task and allow user code
@@ -66,3 +82,24 @@ a parameter and based on its implementation collection items will be sorted in d
 **Basic** implementation requires that each Strategy implements an interface and provides a concrete implementation for an execute method. The strategy is selected and the execute method called via an interface reference.
 There is also **Enum Strategy** implementation where we can implement your business rule in each constant.
 The context class receives the strategy from the client and executes the algorithm in the selected strategy.
+
+##Chain of Responsibility
+
+Chain of responsibility pattern defines structure por passing object along handlers chain 
+until one of that handlers handles that request. All handlers 
+1) are child of the same abstract class or implementing the same interface.
+2) have a link to next handler.
+###### One of the real life example of this pattern is in Java Servlet filters flow. 
+As we know we can have multiple filters to process an HTTP request. To use this filters we are implementing Filter interface
+and overriding doFilter method <br/>
+#####doFilter(
+      ServletRequest request,
+      ServletResponse response,
+      FilterChain chain
+      )
+In our doFilter method we can call
+#####
+      chain.doFilter(request, response); 
+ to pass request to the next FilterChain.
+      
+The main disadvantage is that this pattern can create deep stack traces, which can affect performance
