@@ -57,7 +57,7 @@ Prototype pattern suggest to crate a copy of object instead of creating a new on
 2) If the class contains members of any class type then only the object references to those members are copied and hence the member references in both the original object as well as the cloned object refer to the same object. 
 To implement this pattern we need to create an interface which has clone method and implement it in our class.
 
-#Behavioral
+# Behavioral
 This patterns provide solutions for better interactions between objects
 and how to provide lose coupling and flexibility to extend easily.
 There are eleven Behavioral design patterns:
@@ -74,7 +74,7 @@ There are eleven Behavioral design patterns:
 10) Template Method Pattern
 11) Visitor Pattern
 
-##Strategy(Policy Pattern) in Java. 
+## Strategy(Policy Pattern) in Java. 
 Strategy is a behavioral design pattern that turns a set of behaviors into objects and makes them interchangeable inside original context object. The original object, called context, holds a reference to a strategy object and delegates it executing the behavior.
 In other words we use Strategy pattern when we have multiple algorithms for single task and allow user code
 to decide which algorithm to use. As an example we can see sort method in Collections class. Method takes a Comparator as
@@ -83,7 +83,7 @@ a parameter and based on its implementation collection items will be sorted in d
 There is also **Enum Strategy** implementation where we can implement your business rule in each constant.
 The context class receives the strategy from the client and executes the algorithm in the selected strategy.
 
-##Chain of Responsibility
+## Chain of Responsibility
 
 Chain of responsibility pattern defines structure por passing object along handlers chain 
 until one of that handlers handles that request. All handlers 
@@ -103,3 +103,21 @@ In our doFilter method we can call
  to pass request to the next FilterChain.
       
 The main disadvantage is that this pattern can create deep stack traces, which can affect performance
+
+## Command pattern (Action or Transaction)
+
+With command pattern we are wrapping a request to the single object and passing it to invoker.
+Invoker looks at the object and pass it to corresponding handler. In this pattern client just 
+gives instructions to invoke without knowing how it is going to be executed. 
+It supports decoupling between a client object which request a
+task and the receiver object which actually performs the task.
+This pattern is not focused on the sequence of the tasks stored,
+but on hiding the details/implementation of the actions performed.
+To implement this pattern we need to
+1) Define a Command interface with method execute(). This interface will be used by client to create all variety of commands.
+2) An invoker class which will receive an object and perform any specific task 
+requested by command.
+FileSystem manager can be an example. This will do same tasks for different OS versions.
+#### Usage in java
+1) java.lang.Runnable 
+2) javax.swing.Action
