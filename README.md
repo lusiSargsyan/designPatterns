@@ -121,3 +121,22 @@ FileSystem manager can be an example. This will do same tasks for different OS v
 #### Usage in java
 1) java.lang.Runnable 
 2) javax.swing.Action
+
+## Interpreter
+
+This patter is used for defining grammatical representation of given language and give an interpreter
+to interpret that language. The best example of interpreter design pattern is 
+java compiler that interprets the java source code into byte code that is
+understandable by JVM. Google Translator is also an example of interpreter
+pattern where the input can be in any language and we can get the output
+interpreted in another language. In short we can use this pattern 
+when we need to do same thing in different languages or in different way.
+Like in translator application or SQL language parser.
+##### Usage in JDK
+1) java.util.Pattern 
+2) its subclasses java.text.Format
+
+###### To implement this pattern we need
+1) Interpreter engine which will interpret our expression or language
+2) Expressions that will consume  the functionality provided by the interpreter context.
+3) Client that will take the input from user and decide which Expression to use and then generate output for the user.
