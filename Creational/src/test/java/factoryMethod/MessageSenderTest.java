@@ -2,7 +2,7 @@ package factoryMethod;
 
 import factoryMethod.bean.Message;
 import factoryMethod.impl.Md5Encryption;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class MessageSenderTest {
 

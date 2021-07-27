@@ -1,7 +1,7 @@
 package singleton;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,7 +16,7 @@ public class SerializedSafeSingletonTest {
 
         try (ObjectInput input = new ObjectInputStream(new FileInputStream("file.ser"))) {
             SerializedSafeSingleton deserializedInstance = (SerializedSafeSingleton) input.readObject();
-            Assert.assertEquals(singletonInstance, deserializedInstance);
+            assertEquals(singletonInstance, deserializedInstance);
             //after deserialization singleton creates new instance in case when we don't have
             // implemented Object readResolve method
             //in SerializedSafeSingleton we have implemented that method

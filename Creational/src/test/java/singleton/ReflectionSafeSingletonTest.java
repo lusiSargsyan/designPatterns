@@ -1,17 +1,17 @@
 package singleton;
 
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class ReflectionSafeSingletonTest {
 
-    @Test(expected = InvocationTargetException.class)
-    public void test() throws ReflectiveOperationException {
+    @Test
+    public void test() {
         Constructor<?>[] constructors = ReflectionSafeSingletonTest.class.getDeclaredConstructors();
         Constructor theConstructor = constructors[0];
         theConstructor.setAccessible(true);
-        theConstructor.newInstance();
+        assertThrows(InvocationTargetException.class, theConstructor::newInstance);
     }
 }

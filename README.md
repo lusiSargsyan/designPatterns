@@ -140,3 +140,7 @@ Like in translator application or SQL language parser.
 1) Interpreter engine which will interpret our expression or language
 2) Expressions that will consume  the functionality provided by the interpreter context.
 3) Client that will take the input from user and decide which Expression to use and then generate output for the user.
+
+## Iterator
+This design pattern is one of most used pattern in JDK especially in Collections framework.
+Iterator Design Pattern provides an Iterator object to traverse a collection/container and access its member objects.

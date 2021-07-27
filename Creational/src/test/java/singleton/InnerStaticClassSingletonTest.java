@@ -1,8 +1,7 @@
 package singleton;
 
-import org.junit.Assert;
-import org.junit.Test;
-
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 import java.lang.reflect.Constructor;
 
 public class InnerStaticClassSingletonTest {
@@ -17,6 +16,6 @@ public class InnerStaticClassSingletonTest {
         theConstructor.setAccessible(true);
         InnerStaticClassSingleton instance = (InnerStaticClassSingleton) theConstructor.newInstance();
         InnerStaticClassSingleton instance1 = (InnerStaticClassSingleton) theConstructor.newInstance();
-        Assert.assertNotEquals(instance, instance1);
+        assertNotEquals(instance, instance1);
     }
 }
