@@ -1,7 +1,7 @@
 package singleton;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,7 +16,7 @@ public class SerializedSingletonTest {
         }
         try(ObjectInput input = new ObjectInputStream(new FileInputStream("file.ser"))){
             SerializedSingleton deserializedInstance = (SerializedSingleton) input.readObject();
-            Assert.assertNotEquals(singletonInstance,deserializedInstance);
+            assertNotEquals(singletonInstance,deserializedInstance);
             //after deserialization singleton creates new instance
             // that is why we are getting 2 different objects
         }

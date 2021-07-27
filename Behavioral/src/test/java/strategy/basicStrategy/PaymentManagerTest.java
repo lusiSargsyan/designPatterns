@@ -1,7 +1,7 @@
 package strategy.basicStrategy;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PaymentManagerTest {
 
@@ -12,7 +12,7 @@ public class PaymentManagerTest {
     PaymentResult paypalResultExpected =
         new PaymentResult("Payment via Paypal was done successfully.", PaymentStatus.OK);
     PaymentResult paypalResultActual = manager.doPayment(PaymentMethod.PAYPAL);
-    Assert.assertEquals(paypalResultExpected, paypalResultActual);
+    assertEquals(paypalResultExpected, paypalResultActual);
   }
 
   @Test
@@ -20,6 +20,6 @@ public class PaymentManagerTest {
     PaymentResult stripeResultExpected =
         new PaymentResult("Payment via Stripe was done successfully.", PaymentStatus.OK);
     PaymentResult stripeResultActual = manager.doPayment(PaymentMethod.STRIPE);
-    Assert.assertEquals(stripeResultExpected, stripeResultActual);
+    assertEquals(stripeResultExpected, stripeResultActual);
   }
 }

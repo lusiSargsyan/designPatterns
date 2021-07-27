@@ -2,11 +2,10 @@ package chain;
 
 import chain.storage.IStorageManager;
 import chain.storage.UserStorageManager;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ChainOfResponsibilityTest {
 
@@ -14,7 +13,7 @@ public class ChainOfResponsibilityTest {
   private User activeUser = null;
   private User expiredUser = null;
 
-  @Before
+  @BeforeAll
   public void init() {
     IStorageManager storageManager = UserStorageManager.getInstance();
     activeUser = new User.UserBuilder("John", "pass").status(Status.ACTIVE).build();
@@ -34,17 +33,17 @@ public class ChainOfResponsibilityTest {
 
   @Test
   public void testActiveUser() {
-    Assert.assertEquals(ResultCode.SUCCESS, validationHandler.isValid(activeUser));
+    assertEquals(ResultCode.SUCCESS, validationHandler.isValid(activeUser));
   }
 
   @Test
   public void testExpiredUser() {
-    Assert.assertEquals(ResultCode.EXPIRED, validationHandler.isValid(expiredUser));
+    assertEquals(ResultCode.EXPIRED, validationHandler.isValid(expiredUser));
   }
 
   @Test
   public void testInvalidUser() {
     User invalidUser = new User.UserBuilder("Wrong", "wrong").build();
-    Assert.assertEquals(ResultCode.INVALID, validationHandler.isValid(invalidUser));
+    assertEquals(ResultCode.INVALID, validationHandler.isValid(invalidUser));
   }
 }

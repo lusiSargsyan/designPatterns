@@ -1,7 +1,7 @@
 package prototype;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 public class PrototypeTest {
 
@@ -12,6 +12,6 @@ public class PrototypeTest {
         // If the class contains members of any class type then only the object references to those
         // members are copied and hence the member references in both the original object as well as the
         // cloned object refer to the same object.
-        Assert.assertEquals(car.getColor(), secondCar.getColor());
+        assertEquals(car.getColor(), secondCar.getColor());
     }
 }
