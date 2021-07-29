@@ -144,3 +144,12 @@ Like in translator application or SQL language parser.
 ## Iterator
 This design pattern is one of most used pattern in JDK especially in Collections framework.
 Iterator Design Pattern provides an Iterator object to traverse a collection/container and access its member objects.
+
+##Mediator
+
+Mediator design pattern is one of the well known and used Behavioral pattern in Java.
+This pattern is a great choice in case when you have a complicated communication between
+objects and possible coupling. In such cases this pattern suggest as to keep our objects 
+independent and use middleware moderator class which will manage communication between that objects.
+The one of examples of this pattern is Controller class in MVC pattern. We can use this pattern 
+for example in GUI applications to connect front and back parts. 
