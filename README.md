@@ -145,7 +145,7 @@ Like in translator application or SQL language parser.
 This design pattern is one of most used pattern in JDK especially in Collections framework.
 Iterator Design Pattern provides an Iterator object to traverse a collection/container and access its member objects.
 
-##Mediator
+## Mediator
 
 Mediator design pattern is one of the well known and used Behavioral pattern in Java.
 This pattern is a great choice in case when you have a complicated communication between
@@ -154,7 +154,7 @@ independent and use middleware moderator class which will manage communication b
 The one of examples of this pattern is Controller class in MVC pattern. We can use this pattern 
 for example in GUI applications to connect front and back parts. 
 
-##Memento 
+## Memento 
 Memento design pattern is design which gives ability to restore object to its previous state.
 To have Memento design we need to have 3 object.
 1) **Originator** - this is an object which's original state we want to store. It keeps Memento object,
