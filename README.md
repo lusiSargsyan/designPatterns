@@ -153,3 +153,15 @@ objects and possible coupling. In such cases this pattern suggest as to keep our
 independent and use middleware moderator class which will manage communication between that objects.
 The one of examples of this pattern is Controller class in MVC pattern. We can use this pattern 
 for example in GUI applications to connect front and back parts. 
+
+##Memento 
+Memento design pattern is design which gives ability to restore object to its previous state.
+To have Memento design we need to have 3 object.
+1) **Originator** - this is an object which's original state we want to store. It keeps Memento object,
+has setters and getters for that object. So in a nutshell Originator knows how to save its own state.
+2) **Caretaker**  class which knows when and which state we need to store. It operates Originator object
+and keeps Originator states before operating.
+3) **Memento** The POJO object which contains storage of state and methods to interact with it.
+This is mostly an immutable object .   
+Real life example of Memento pattern is Git stash logic.
+Another use case of this pattern is TextEditor or any kind of editor where Undo functionality is expected.
