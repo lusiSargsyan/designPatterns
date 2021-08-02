@@ -9,12 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ChainOfResponsibilityTest {
 
-  private ValidationHandler validationHandler = null;
-  private User activeUser = null;
-  private User expiredUser = null;
+  private static ValidationHandler validationHandler = null;
+  private static User activeUser = null;
+  private static User expiredUser = null;
 
   @BeforeAll
-  public void init() {
+  public static void init() {
     IStorageManager storageManager = UserStorageManager.getInstance();
     activeUser = new User.UserBuilder("John", "pass").status(Status.ACTIVE).build();
     expiredUser =
